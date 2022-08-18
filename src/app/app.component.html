@@ -1,0 +1,18 @@
+<ng-template [ngIf]="status != ''">
+  <app-notification [status]="status"></app-notification>
+</ng-template>
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Task to do</mat-label>
+    <input matInput placeholder="Ex. Start coding today" value="Clean bedroom" #taskNameInput>
+  </mat-form-field>
+</form>
+<button mat-raised-button color="primary" (click)="addToList()">Add task to list</button>
+<h1>Tasks to do:</h1>
+<mat-list>
+  <app-todoItem *ngFor="let task of (taskList | tasksNotDone)" [item]="task"></app-todoItem>
+</mat-list>
+<h1>Tasks done: </h1>
+<mat-list>
+  <app-todoItem *ngFor="let task of (taskList | tasksDone)" [item]="task"></app-todoItem>
+</mat-list>
