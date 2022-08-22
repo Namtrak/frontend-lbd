@@ -1,1 +1,1 @@
-Simple Todo app created in Angular
+Simple Todo app created with Angular
